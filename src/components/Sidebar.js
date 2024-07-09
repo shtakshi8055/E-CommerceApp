@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { useAuth } from '../Autentication/AuthContext';
 import './Sidebar.css';
 
 const Sidebar = () => {
     const { currentUser } = useAuth();
-    const navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleSidebar = () => {
@@ -15,7 +14,7 @@ const Sidebar = () => {
     return (
         <div className={`sidebar ${isOpen ? 'open' : ''}`}>
             <Link className="sidebar-toggle" onClick={toggleSidebar}>
-            <img src="https://cdn-icons-png.flaticon.com/128/6662/6662866.png"/>
+            <img src="https://cdn-icons-png.flaticon.com/128/6662/6662866.png" alt='img'/>
             </Link>
             <nav className="sidebar-menu">
                 <div>

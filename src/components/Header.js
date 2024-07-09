@@ -27,10 +27,10 @@ const Header = () => {
 
             {cart.length === 0 ? (
                               <Link to="/cart">
-                        <img src='https://cdn-icons-png.flaticon.com/128/3916/3916630.png'/></Link>
+                        <img src='https://cdn-icons-png.flaticon.com/128/3916/3916630.png' alt='img'/></Link>
                         ) : (
                             <Link to="/cart">
-                            <img src='https://cdn-icons-png.flaticon.com/128/3916/3916609.png' />  
+                            <img src='https://cdn-icons-png.flaticon.com/128/3916/3916609.png' alt='img'/>  
                             <p className='count'>{cart.length}</p>
                         </Link>
                        

@@ -8,13 +8,13 @@ const Cart = () => {
     const { cart, dispatch, subtotal } = useCart();
     const { currentUser } = useAuth();
 
-    const handleBuyNow = (product) => {
-        if (currentUser) {
-            alert(`Proceed to buy ${product.name}`);
-        } else {
-            alert(`Please login to buy ${product.name}`);
-        }
-    };
+    // const handleBuyNow = (product) => {
+    //     if (currentUser) {
+    //         alert(`Proceed to buy ${product.name}`);
+    //     } else {
+    //         alert(`Please login to buy ${product.name}`);
+    //     }
+    // };
 
     const handleRemove = (product) => {
         dispatch({ type: 'REMOVE_FROM_CART', product });
