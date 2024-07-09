@@ -33,8 +33,8 @@ const Footer = () =>{
                     <li>Facebook</li></div>
                 </ul>
             </div>
-            <div>
-                <h4>UseFull Links</h4>
+            <div className="useful-link">
+                <h4 >UseFull Links</h4>
                 <ul>
                    <Link style={{textDecoration:'none',
                     color:'black'

@@ -1,18 +1,19 @@
+// src/pages/Login.js
 import React, { useState } from 'react';
 import { useAuth } from '../Autentication/AuthContext';
-import './Login.css';
+import './Login.css'; // Import the CSS file
 import { useNavigate, Link } from 'react-router-dom';
 
 const Login = () => {
     const { isLoggedIn, login } = useAuth();
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
-        if (login(username, password)) {
+        if (login(email, password)) {
             navigate('/');
         } else {
             setError('Invalid Credentials');
@@ -24,15 +25,14 @@ const Login = () => {
             {!isLoggedIn ? (
                 <div className="login-form">
                     <h2>Login</h2>
-                    {error && <p className="error">{error}</p>}
                     <form onSubmit={handleLogin}>
                         <div className="form-group">
-                            <label>Username:</label>
+                            <label>Email:</label>
                             <input 
-                                type="text" 
-                                value={username} 
-                                style={{textTransform: "capitalize"}}
-                                onChange={(e) => setUsername(e.target.value)} 
+                                type="email" 
+                                value={email} 
+                                onChange={(e) => setEmail(e.target.value)} 
+                                required 
                             />
                         </div>
                         <div className="form-group">
@@ -41,13 +41,15 @@ const Login = () => {
                                 type="password" 
                                 value={password} 
                                 onChange={(e) => setPassword(e.target.value)} 
+                                required 
                             />
                         </div>
+                        {error && <div className="error">{error}</div>}
                         <button type="submit" className="login-button">Login</button>
-
-                        <p>Don't have an Account? 
-                            <Link to='/register'>Sign-up</Link></p>
                     </form>
+                    <div className="register-link">
+                        <p>Don't have an account? <Link to="/register">Register here</Link></p>
+                    </div>
                 </div>
             ) : (
                 navigate('/')

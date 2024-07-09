@@ -22,7 +22,7 @@ const Sidebar = () => {
                 {currentUser ? (
                     <Link to ='/profile'>
                      <img src='https://cdn-icons-png.flaticon.com/128/5649/5649782.png' alt='profile'/>
-                        {currentUser.username}
+                        {currentUser.firstName}
                      </Link>
                 ):(   
                 ('')

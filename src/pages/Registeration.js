@@ -1,43 +1,104 @@
+// src/pages/Register.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Autentication/AuthContext';
-import './Registeration.css';
+import { useNavigate } from 'react-router-dom';
+import './Registeration.css'; // Add CSS for styling
+
 const Register = () => {
     const { register } = useAuth();
-    const [username, setUsername] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [dateOfBirth, setDateOfBirth] = useState('');
+    const [email, setEmail] = useState('');
+    const [address, setAddress] = useState ('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
-        register(username, password);
+        if (password !== confirmPassword) {
+            setError('Passwords do not match');
+            return;
+        }
+
+        const newUser = { firstName, lastName, dateOfBirth, email, password, address };
+        register(newUser);
         navigate('/login');
     };
 
     return (
-        <div className="register-form">
-                    <h2>Register</h2>
-                    <form onSubmit={handleRegister}>
-                        <div className="form-group">
-                            <label>Username:</label>
-                            <input 
-                                type="text" 
-                                value={username} 
-                                style={{textTransform: "capitalize"}}
-                                onChange={(e) => setUsername(e.target.value)} 
-                            />
-                        </div>
-                        <div className="form-group">
-                            <label>Password:</label>
-                            <input 
-                                type="password" 
-                                value={password} 
-                                onChange={(e) => setPassword(e.target.value)} 
-                            />
-                        </div>
-                        <button type="submit" className="login-button">Login</button>
-                    </form>
-                    </div>
+        <div className="register-container">
+            <h2>Register</h2>
+            <form onSubmit={handleRegister}>
+                <div className="form-group">
+                    <label>First Name:</label>
+                    <input 
+                        type="text" 
+                        value={firstName} 
+                        onChange={(e) => setFirstName(e.target.value)} 
+                        required 
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Last Name:</label>
+                    <input 
+                        type="text" 
+                        value={lastName} 
+                        onChange={(e) => setLastName(e.target.value)} 
+                        required 
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Date of Birth:</label>
+                    <input 
+                        type="date" 
+                        value={dateOfBirth} 
+                        onChange={(e) => setDateOfBirth(e.target.value)} 
+                        required 
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Email:</label>
+                    <input 
+                        type="email" 
+                        value={email} 
+                        onChange={(e) => setEmail(e.target.value)} 
+                        required 
+                    />
+                </div>
+                <div className="form-group">
+                <label>Address:</label>
+                    <input 
+                        type="text" 
+                        value={address} 
+                        onChange={(e) => setAddress(e.target.value)} 
+                        required 
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Password:</label>
+                    <input 
+                        type="password" 
+                        value={password} 
+                        onChange={(e) => setPassword(e.target.value)} 
+                        required 
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Confirm Password:</label>
+                    <input 
+                        type="password" 
+                        value={confirmPassword} 
+                        onChange={(e) => setConfirmPassword(e.target.value)} 
+                        required 
+                    />
+                </div>
+                {error && <div className="error">{error}</div>}
+                <button type="submit" className="register-button">Register</button>
+            </form>
+        </div>
     );
 };
 

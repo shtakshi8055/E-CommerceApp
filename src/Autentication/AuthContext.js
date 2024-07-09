@@ -1,40 +1,3 @@
-// import React, { createContext, useContext, useEffect, useState } from 'react';
-
-// const AuthContext = createContext();
-
-// export const AuthProvider = ({ children }) => {
-//     const [isLoggedIn, setIsLoggedIn] = useState(
-//         localStorage.getItem('isLoggedIn') === 'true'
-//     );
-
-//     useEffect(() => {
-//         localStorage.setItem('isLoggedIn', isLoggedIn);
-//     }, [isLoggedIn]);
-
-//     const login = ({ username, password }) => {
-//         // Implement your authentication logic here
-//         if (username === 'admin' && password === 'admin') { // Example logic
-//             setIsLoggedIn(true);
-//         }
-//     };
-
-//     const logout = () => {
-//         setIsLoggedIn(false);
-//     };
-
-//     // const login = () => setIsLoggedIn(true);
-//     // const logout = () => setIsLoggedIn(false); 
-
-//     return (
-//         <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
-//             {children}
-//         </AuthContext.Provider>
-//     );
-// };
-
-// export const useAuth = () => useContext(AuthContext);
-
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
@@ -50,8 +13,7 @@ export const AuthProvider = ({ children }) => {
         return storedUser ? JSON.parse(storedUser) : null;
     });
 
-    const register = (username, password) => {
-        const newUser = { username, password };
+    const register = (newUser) => {
         setUsers((prevUsers) => {
             const updatedUsers = [...prevUsers, newUser];
             localStorage.setItem('users', JSON.stringify(updatedUsers));
@@ -59,8 +21,8 @@ export const AuthProvider = ({ children }) => {
         });
     };
 
-    const login = (username, password) => {
-        const user = users.find((user) => user.username === username && user.password === password);
+    const login = (email, password) => {
+        const user = users.find((user) => user.email === email && user.password === password);
         if (user) {
             setCurrentUser(user);
             localStorage.setItem('currentUser', JSON.stringify(user));
@@ -74,13 +36,20 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('currentUser');
     };
 
-
-    useEffect(() => {
-        localStorage.setItem('users', JSON.stringify(users));
-    }, [users]);
+    const updateProfile = (updatedUser) => {
+        setUsers((prevUsers) => {
+            const updatedUsers = prevUsers.map(user =>
+                user.email === updatedUser.email ? updatedUser : user
+            );
+            localStorage.setItem('users', JSON.stringify(updatedUsers));
+            return updatedUsers;
+        });
+        setCurrentUser(updatedUser);
+        localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+    };
 
     return (
-        <AuthContext.Provider value={{ users, currentUser, register, login, logout }}>
+        <AuthContext.Provider value={{ users, currentUser, register, login, logout, updateProfile }}>
             {children}
         </AuthContext.Provider>
     );

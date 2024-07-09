@@ -16,9 +16,9 @@ const Header = () => {
             </div>
             <nav>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
+                    <li ><Link to="/">Home</Link></li>
+                    <li ><Link to="/about">About</Link></li>
+                    <li ><Link to="/contact">Contact</Link></li>
                 </ul>
                 
             </nav>
@@ -40,7 +40,7 @@ const Header = () => {
                 ) : (
                     <React.Fragment>
             
-                      <i> <b>{currentUser.username}</b></i> 
+                      <i> <b>{currentUser.firstName}</b></i> 
                         
                         <button className="logout-btn" onClick={logout}>Logout</button>
                         

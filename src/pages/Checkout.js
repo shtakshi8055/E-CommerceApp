@@ -46,7 +46,7 @@ const Checkout = () => {
                 <div className="order-confirmation">
                     <div className="order-confirmation-dialog">
                         <h3>Order Confirmed!</h3>
-                        <p>Thanks for shopping with us, {currentUser.username}</p>
+                        <p>Thanks for shopping with us, {currentUser.firstName}</p>
                         <img src='https://static.vecteezy.com/system/resources/previews/023/527/506/original/abstract-green-check-mark-circle-icon-sign-symbol-transparent-background-free-png.png' alt='purchase'/>
                     </div>
                 </div>

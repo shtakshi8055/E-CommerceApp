@@ -1,5 +1,7 @@
+
 .cart {
     padding: 20px;
+    min-height: 70vh;
 }
 
 .cart-items {
@@ -21,12 +23,12 @@
 }
 
 .cart-item-image img {
-    max-width: 100px;
-    height: 100px;
+    max-width: 200px;
+    height: 200px;
 }
 
 .cart-item-details {
-    flex: 1 1 auto;
+    align-items: center;
 }
 
 .cart-item-actions {
@@ -52,7 +54,7 @@
 .cart-item-actions button:last-child {
     background-color: #dc3545;
     color: #fff;
-    margin-left: 475px;
+    margin-left: 100vh;
 }
 
 .cart-item-subtotal {
@@ -66,6 +68,7 @@
 .cart-subtotal {
     margin-top: 20px;
     text-align: right;
+    margin-right: 40px;
 }
 
 .cart-subtotal h3 {

@@ -51,7 +51,7 @@ const Cart = () => {
                     </div>
                     <div className="cart-subtotal">
                         
-                        <h3>Subtotal: ${subtotal.toFixed(2)}</h3>
+                        <h3>Total: ${subtotal.toFixed(2)}</h3>
                         {!currentUser ? (
                             <Link to="/login">
                             <button className="checkout-button">Checkout</button>

@@ -5,16 +5,15 @@
     padding: 10px 20px;
     background-color: #fca2a2;
     color: #000;
-    height: 500px;
+    height: 300px;
 }
 .footer img{
-    width: 100%;
-   
+    width: 100%; 
 }
+
 .footer h4 {
-    font-size: 30px;
-    margin-right: 30px;
-    margin-right: 60px;
+    font-size: 20px;
+    margin-right: 50px;
 }
 .footer ul {
     list-style: none;
@@ -23,9 +22,9 @@
 
 .footer ul li {
     text-align: left;
-    margin-right: 60px;
-    font-size: 20px;
-    margin-bottom: 30px;
+    margin-right: 50px;
+    font-size: 15px;
+    margin-bottom: 20px;
     text-decoration: none;
     margin-top: 3px;
 
@@ -46,3 +45,6 @@
     align-items: center;
 }
 
+.useful-link{
+    margin-right: 20px;
+}
