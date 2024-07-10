@@ -33,8 +33,9 @@ const Register = () => {
             <h2>Register</h2>
             <form onSubmit={handleRegister}>
                 <div className="form-group">
-                    <label>First Name:</label>
+                   
                     <input 
+                    placeholder='First Name'
                         type="text" 
                         value={firstName} 
                         onChange={(e) => setFirstName(e.target.value)} 
@@ -42,8 +43,9 @@ const Register = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Last Name:</label>
+                   
                     <input 
+                    placeholder='Last Name'
                         type="text" 
                         value={lastName} 
                         onChange={(e) => setLastName(e.target.value)} 
@@ -51,8 +53,9 @@ const Register = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Date of Birth:</label>
+                    
                     <input 
+                    placeholder='Date- of- Birth'
                         type="date" 
                         value={dateOfBirth} 
                         onChange={(e) => setDateOfBirth(e.target.value)} 
@@ -60,8 +63,9 @@ const Register = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Email:</label>
+                    
                     <input 
+                    placeholder='Email'
                         type="email" 
                         value={email} 
                         onChange={(e) => setEmail(e.target.value)} 
@@ -69,8 +73,9 @@ const Register = () => {
                     />
                 </div>
                 <div className="form-group">
-                <label>Address:</label>
+              
                     <input 
+                    placeholder='Address'
                         type="text" 
                         value={address} 
                         onChange={(e) => setAddress(e.target.value)} 
@@ -78,8 +83,9 @@ const Register = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Password:</label>
+                   
                     <input 
+                    placeholder='Password'
                         type="password" 
                         value={password} 
                         onChange={(e) => setPassword(e.target.value)} 
@@ -87,8 +93,9 @@ const Register = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Confirm Password:</label>
+                   
                     <input 
+                    placeholder='Confirm Password'
                         type="password" 
                         value={confirmPassword} 
                         onChange={(e) => setConfirmPassword(e.target.value)} 

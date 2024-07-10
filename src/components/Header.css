@@ -3,8 +3,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgb(243, 167, 161);
-    color: #000;
+    background-color: rgb(73, 64, 63);
+    color: #f7eeee;
     margin-bottom: 10px;
     position: sticky;
     top: 0;
@@ -22,7 +22,7 @@
 
 .logo {
     font-size: 20px;
-    color: #000;
+    color: #f7eeee;
     margin-left: 50px;
     font-family: fantasy;  
     display: flex;
@@ -48,7 +48,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     gap: 30px;
-    color: #000;
+    color: #f7eeee;
 }
 
 .search-form {
@@ -99,6 +99,9 @@ nav ul li a {
     top: 31px;
     left: 80%;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .count{
     text-decoration: none;
@@ -111,7 +114,7 @@ nav ul li a {
    
 }
 .header-buttons .login-btn {
-    background-color: #4e1818;
+    background-color: #f77878;
     color: #edeef0;
 }
 
@@ -128,4 +131,22 @@ nav ul li a {
     font-size: 20px;
     color:black ;
     margin-top: 10px;
+}
+.wishlist{
+    width: 80px;
+    height: 70px;
+}
+.user-profile img{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    left: auto;
+    right: 10%;
+}
+.hide{
+    display: none;
+}
+.myDiv:hover + .hide{
+    display: flex;
+    color: #dc3545;
 }

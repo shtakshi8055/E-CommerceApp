@@ -27,8 +27,9 @@ const Login = () => {
                     <h2>Login</h2>
                     <form onSubmit={handleLogin}>
                         <div className="form-group">
-                            <label>Email:</label>
+                           
                             <input 
+                            placeholder='Username'
                                 type="email" 
                                 value={email} 
                                 onChange={(e) => setEmail(e.target.value)} 
@@ -36,8 +37,9 @@ const Login = () => {
                             />
                         </div>
                         <div className="form-group">
-                            <label>Password:</label>
+                           
                             <input 
+                            placeholder='Password'
                                 type="password" 
                                 value={password} 
                                 onChange={(e) => setPassword(e.target.value)} 

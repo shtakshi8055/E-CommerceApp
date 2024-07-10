@@ -1,4 +1,5 @@
 import React from 'react';
+//import { useState } from 'react';
 import Product from '../components/Product';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
@@ -70,17 +71,21 @@ const Home = () => {
    const handleBuyNow = (product) => {
       if (currentUser) {
          dispatch({ type: 'ADD_TO_CART', product });
-         navigate('/cart');
+         navigate('/checkout');
       } else {
         navigate('/login')
       }
    };
+   const handleAddToWish = (product) => {
+       dispatch({ type: 'ADD_TO_WISHLIST', product });
+   }
 
    return (
       <div className="home">
          <div className="products">
             {sampleProducts.map(product => (
-               <Product product={product} handleAddToCart={handleAddToCart} handleBuyNow={handleBuyNow} />
+               <Product product={product} handleAddToCart={handleAddToCart} handleBuyNow={handleBuyNow}
+                        handleAddToWish={handleAddToWish}/>
             ))}
 
          </div>

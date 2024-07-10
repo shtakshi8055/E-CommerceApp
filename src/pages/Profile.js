@@ -107,6 +107,7 @@ const Profile = () => {
                     <button onClick={() => setEditMode(false)} className="cancel-button">Cancel</button>
                 </div>
             )}
+
         </div>
     );
 };

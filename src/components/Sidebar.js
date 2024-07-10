@@ -31,9 +31,9 @@ const Sidebar = () => {
                 <Link to="/" onClick={toggleSidebar}>Home</Link>
                 
                 {!currentUser ? (
-                    <Link to="/login" onClick={toggleSidebar}>Order</Link>
+                    <Link to="/login" onClick={toggleSidebar}>My Orders</Link>
                 ) : 
-                <Link to="/orders" onClick={toggleSidebar}>Order</Link>
+                <Link to="/orders" onClick={toggleSidebar}>My Orders</Link>
                 }
                 <Link to="/cart" onClick={toggleSidebar}>Cart</Link>
                 <Link to="/about" onClick={toggleSidebar}>About</Link>

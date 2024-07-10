@@ -16,6 +16,12 @@ const cartReducer = (state, action) => {
                 const updatedCart = [...state.cart, { ...action.product, quantity: 1 }];
                 return { ...state, cart: updatedCart, subtotal: calculateSubtotal(updatedCart) };
             }
+            case 'ADD_TO_WISHLIST':
+                const WishListProductIndex = state.wish.find(
+                    items => items.id === action.product.id
+                );  
+            return{...state,WishListProductIndex};
+
         case 'REMOVE_FROM_CART':
             const filteredCart = state.cart.filter(item => item.id !== action.product.id);
             return { ...state, cart: filteredCart, subtotal: calculateSubtotal(filteredCart) };

@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
 import { useAuth } from '../Autentication/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const sampleProducts = [
    {
@@ -57,7 +58,8 @@ const sampleProducts = [
 const ProductDetail = () => {
     const { id } = useParams();
     const { dispatch } = useCart();
-    const { isLoggedIn } = useAuth();
+    const { currentUser } = useAuth();
+    const navigate = useNavigate();
 
     const product = sampleProducts.find(p => p.id === parseInt(id));
 
@@ -67,14 +69,14 @@ const ProductDetail = () => {
 
     const handleAddToCart = () => {
         dispatch({ type: 'ADD_TO_CART', product });
-       
     };
 
     const handleBuyNow = () => {
-        if (isLoggedIn) {
-           // alert(`Proceed to buy ${product.name}`);
+        if (currentUser) {
+         dispatch({ type: 'ADD_TO_CART', product });
+         navigate('/cart')
         } else {
-           // alert(`Please login to buy ${product.name}`);
+          navigate('/login')
         }
     };
 
@@ -86,11 +88,7 @@ const ProductDetail = () => {
             <p>Price: ${product.price.toFixed(2)}</p>
             <div className="product-buttons">
                 <button onClick={handleAddToCart}>Add to Cart</button>
-                {isLoggedIn ? (
-                    <button onClick={handleBuyNow}>Buy Now</button>
-                ) : (
-                    <button onClick={() => alert('Please, first add to cart...')}>Buy Now</button>
-                )}
+                <button onClick={handleBuyNow}>Buy Now</button>
             </div>
         </div>
     );

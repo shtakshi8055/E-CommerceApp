@@ -57,7 +57,7 @@ const Footer = () =>{
                     <li>Phone</li></div>
                     <div className="instagram">
                     <img src="https://cdn-icons-png.flaticon.com/128/2165/2165061.png" alt="mail"/>
-                    <li>E-Mail</li></div>
+                    <li>Email</li></div>
                 </ul>
                 
             </div>
