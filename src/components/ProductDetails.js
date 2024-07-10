@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
 import { useAuth } from '../Autentication/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import './ProductDetail.css';
 
 const sampleProducts = [
    {
@@ -86,7 +87,7 @@ const ProductDetail = () => {
             <img src={product.image} alt={product.name} />
             <p>{product.description}</p>
             <p>Price: ${product.price.toFixed(2)}</p>
-            <div className="product-buttons">
+            <div className='product-bnts'>
                 <button onClick={handleAddToCart}>Add to Cart</button>
                 <button onClick={handleBuyNow}>Buy Now</button>
             </div>

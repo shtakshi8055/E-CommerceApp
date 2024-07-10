@@ -29,6 +29,10 @@ const Cart = () => {
                                     <h3>{product.name}</h3>
                                     <p>Price: ${product.price.toFixed(2)}</p>
                                     <p>Quantity: {product.quantity}</p>
+                                    <div>
+                                        <button className='add'>+</button>
+                                        <button className='decrease'>-</button>
+                                    </div>
                                     <div className="cart-item-actions">
                                         <button onClick={() => handleRemove(product)}>Remove</button>
                                     </div>

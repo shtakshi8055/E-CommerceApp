@@ -2,22 +2,18 @@ import React from 'react';
 import { useState } from 'react';
 import './Product.css';
 import { Link } from 'react-router-dom';
-import { useCart } from './CartContext';
 import saved from "../assests/saved.png";
 import unsaved from "../assests/unsaved.png";
 
 const Product = ({ product, handleAddToCart, handleBuyNow, handleAddToWish}) => {
-    const { dispatch } = useCart();
      const [name, setName] = useState(unsaved);
 
     const changeImg = () => {
         let value = name;
-
         if (value === unsaved) {
-           // dispatch({ type: 'ADD_TO_WISHLIST', product });
             setName(saved)
-
-        } else {
+        } 
+        else {
             setName(unsaved)
         }
     }
