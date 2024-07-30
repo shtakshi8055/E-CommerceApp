@@ -40,6 +40,9 @@ const cartReducer = (state, action) => {
         case 'FETCH_ORDERS':
             const orders = JSON.parse(localStorage.getItem('orders')) || [];
             return { ...state, orders };
+            case 'LOGOUT':
+                localStorage.removeItem('orders');
+                return { ...state, cart: [], subtotal: 0, orders: [] };
         default:
             return state;
     }

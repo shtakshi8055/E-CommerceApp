@@ -2,21 +2,21 @@ import React from 'react';
 import { useState } from 'react';
 import './Product.css';
 import { Link } from 'react-router-dom';
-import saved from "../assests/saved.png";
-import unsaved from "../assests/unsaved.png";
+// import saved from "../assests/saved.png";
+// import unsaved from "../assests/unsaved.png";
 
 const Product = ({ product, handleAddToCart, handleBuyNow, handleAddToWish}) => {
-     const [name, setName] = useState(unsaved);
+    //  const [name, setName] = useState(unsaved);
 
-    const changeImg = () => {
-        let value = name;
-        if (value === unsaved) {
-            setName(saved)
-        } 
-        else {
-            setName(unsaved)
-        }
-    }
+    // const changeImg = () => {
+    //     let value = name;
+    //     if (value === unsaved) {
+    //         setName(saved)
+    //     } 
+    //     else {
+    //         setName(unsaved)
+    //     }
+    // }
 
     return (
         <div className="product">
@@ -29,7 +29,7 @@ const Product = ({ product, handleAddToCart, handleBuyNow, handleAddToWish}) => 
                 <div className="product-buttons">
                     <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
                     <button onClick={() => handleBuyNow(product)}>Buy Now</button>
-                    <img src={name} onClick={changeImg} alt='wishlist' />
+                    {/* <img src={name} onClick={changeImg} alt='wishlist' /> */}
 
                 </div>
             </div>

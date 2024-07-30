@@ -26,13 +26,13 @@ const Header = () => {
                 </ul>
 
             </nav>
-            <Link to='/wishlist'>
+            {/* <Link to='/wishlist'>
                 <img style={{
                     width: "44px", height: "46px",
                     marginRight: "-300px"
                 }}
                     src='https://cdn-icons-png.flaticon.com/128/7245/7245022.png' alt='wishlist' />
-            </Link>
+            </Link> */}
             <div className="header-buttons">
                 {cart.length === 0 ? (
                     <Link to="/cart">

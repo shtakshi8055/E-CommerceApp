@@ -18,7 +18,7 @@ import Register from './pages/Registeration';
 import Profile from './pages/Profile';
 import './App.css';
 import Footer from './components/Footer';
-import WishList from './pages/WishList';
+// import WishList from './pages/WishList';
 
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
                                 <Route path="/orders" element={<Orders/>} />
                                 <Route path="/register" element={<Register/>} />
                                 <Route path="/profile" element={<Profile/>} />
-                                <Route path='wishlist' element={<WishList/>}/>
+                                {/* <Route path='/wishlist' element={<WishList/>}/> */}
                                 <Route path="/protected" element={
                                     <PrivateRoute>
                                         <ProtectedComponent />

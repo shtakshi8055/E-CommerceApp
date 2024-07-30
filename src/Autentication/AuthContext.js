@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
         return false;
     };
     const navigate = useNavigate();
-    const logout = () => {
+    const logout = ({setuser}) => {
         setCurrentUser(null);
         localStorage.removeItem('currentUser');
         navigate('/');
